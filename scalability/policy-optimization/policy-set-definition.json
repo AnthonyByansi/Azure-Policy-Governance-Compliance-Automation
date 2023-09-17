@@ -1,0 +1,21 @@
+{
+  "policySetDefinitions": [
+    {
+      "name": "Scalability Best Practices",
+      "description": "A policy set defining best practices for resource scalability.",
+      "displayName": "Scalability Best Practices",
+      "policyDefinitions": [
+        {
+          "policyDefinitionId": "/subscriptions/your-subscription-id/providers/Microsoft.Authorization/policyDefinitions/policy1",
+          "parameters": {},
+          "enforcementMode": "default"
+        },
+        {
+          "policyDefinitionId": "/subscriptions/your-subscription-id/providers/Microsoft.Authorization/policyDefinitions/policy2",
+          "parameters": {},
+          "enforcementMode": "default"
+        }
+      ]
+    }
+  ]
+}
