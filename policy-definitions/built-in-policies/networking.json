@@ -1,0 +1,27 @@
+{
+    "mode": "All",
+    "displayName": "Enforce Network Security Group (NSG) Rules",
+    "description": "This built-in policy enforces network security group (NSG) rules to restrict incoming traffic.",
+    "metadata": {
+      "category": "Networking",
+      "createdBy": "Azure"
+    },
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "not": {
+          "field": "type",
+          "in": [
+            "Microsoft.Network/networkSecurityGroups/securityRules"
+          ]
+        }
+      },
+      "then": {
+        "effect": "deny",
+        "details": {
+          "message": "Only allowed NSG rules are permitted."
+        }
+      }
+    }
+  }
+  
