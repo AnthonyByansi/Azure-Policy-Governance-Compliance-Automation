@@ -1,0 +1,34 @@
+{
+    "mode": "All",
+    "parameters": {
+      "allowedResourceTypes": {
+        "type": "array",
+        "metadata": {
+          "displayName": "Allowed Resource Types",
+          "description": "List of resource types that are allowed."
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "not": {
+          "allOf": [
+            {
+              "field": "type",
+              "in": "[parameters('allowedResourceTypes')]"
+            }
+          ]
+        }
+      },
+      "then": {
+        "effect": "deny"
+      }
+    },
+    "displayName": "Restrict Unapproved Resource Types",
+    "description": "This policy restricts the creation of unapproved resource types.",
+    "metadata": {
+      "category": "Custom",
+      "createdBy": "Your Name"
+    }
+  }
+  
