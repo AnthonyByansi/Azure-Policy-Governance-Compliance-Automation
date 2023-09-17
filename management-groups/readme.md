@@ -1,6 +1,4 @@
-Certainly, here's a well-structured `README.md` file for the `management-groups` directory in your Azure Policy Governance and Compliance Automation GitHub project:
 
-```markdown
 # Azure Policy Governance and Compliance Automation
 ## Management Groups Configuration
 
