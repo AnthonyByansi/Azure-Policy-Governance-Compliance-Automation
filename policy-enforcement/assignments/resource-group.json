@@ -1,12 +1,12 @@
 {
-  "displayName": "Enforce Data Encryption at Subscription",
-  "policyDefinitionId": "/subscriptions/your-subscription-id/providers/Microsoft.Authorization/policyDefinitions/data-encryption-policy",
-  "scope": "/subscriptions/your-subscription-id",
+  "displayName": "Enforce Resource Naming Convention at Resource Group",
+  "policyDefinitionId": "/subscriptions/your-subscription-id/providers/Microsoft.Authorization/policyDefinitions/resource-naming-policy",
+  "scope": "/subscriptions/your-subscription-id/resourceGroups/your-resource-group-name",
   "notScopes": [],
   "parameters": {},
   "enforcementMode": "Default",
   "metadata": {
-    "category": "Security",
+    "category": "Resource Management",
     "createdBy": "Your Name"
   }
 }
