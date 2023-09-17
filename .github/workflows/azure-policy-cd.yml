@@ -1,0 +1,26 @@
+name: Azure Policy CD
+
+on:
+  workflow_run:
+    workflows: ["Azure Policy CI"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set Up Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy Azure Policies
+      run: |
+        # Deploy Azure policies here.
+        # Example: az policy assignment create --name <assignment-name> --policy <policy-definition-file> --scope <scope>
+
