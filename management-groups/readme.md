@@ -102,5 +102,3 @@ We welcome contributions from the community! If you have improvements, bug fixes
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
-
-Thank you for your interest in our Management Groups Configuration section. We hope this resource helps you effectively manage your Azure resources and enforce governance in your Azure environment.
