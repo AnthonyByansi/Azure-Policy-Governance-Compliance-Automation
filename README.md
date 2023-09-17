@@ -1,8 +1,6 @@
 
 # Azure Policy Governance and Compliance Automation
 
-![Project Logo](link_to_project_logo.png)
-
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
 ## Table of Contents
