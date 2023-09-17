@@ -1,0 +1,12 @@
+{
+  "displayName": "Enforce Network Security Group (NSG) Rules at Management Group",
+  "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/your-management-group-id/providers/Microsoft.Authorization/policyDefinitions/networking-policy",
+  "scope": "/providers/Microsoft.Management/managementGroups/your-management-group-id",
+  "notScopes": [],
+  "parameters": {},
+  "enforcementMode": "Default",
+  "metadata": {
+    "category": "Networking",
+    "createdBy": "Your Name"
+  }
+}
