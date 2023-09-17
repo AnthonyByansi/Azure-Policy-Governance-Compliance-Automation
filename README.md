@@ -79,7 +79,7 @@ Before getting started, ensure you have the following prerequisites:
 
 ### Management Groups
 
-[Detailed instructions and scripts for setting up management groups](./management-groups/README.md)
+[Detailed instructions and scripts for setting up management groups](management-groups/readme.md)
 
 ### Policy Definitions
 
