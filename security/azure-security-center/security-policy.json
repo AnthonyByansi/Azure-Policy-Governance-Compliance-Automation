@@ -1,0 +1,38 @@
+{
+  "name": "Security Baseline Policy",
+  "description": "An Azure Security Center policy defining security baselines for resources.",
+  "rules": [
+    {
+      "name": "Require Disk Encryption",
+      "description": "All virtual machines must have disk encryption enabled.",
+      "effect": "auditIfNotExists",
+      "details": {
+        "type": "Microsoft.Compute/virtualMachines/disks",
+        "existenceCondition": {
+          "allOf": [
+            {
+              "field": "Microsoft.Compute/virtualMachines/disks/encryptionSettings.osDisk.enabled",
+              "equals": "true"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Network Security Groups (NSGs) Required",
+      "description": "All public-facing resources must be associated with a Network Security Group.",
+      "effect": "deny",
+      "details": {
+        "type": "Microsoft.Network/publicIPAddresses",
+        "existenceCondition": {
+          "noneOf": [
+            {
+              "field": "Microsoft.Network/publicIPAddresses/securityRules",
+              "exists": "false"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
