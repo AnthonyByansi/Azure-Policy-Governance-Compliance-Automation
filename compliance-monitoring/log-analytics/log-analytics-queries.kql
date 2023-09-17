@@ -1,1 +1,35 @@
+// Log Analytics Queries for Compliance Monitoring
+
+// Query 1: List Resource Compliance Violations
+complianceResults
+| where ResourceStatus == "NonCompliant"
+| project ResourceType, ResourceName, ResourceId, ComplianceState, ComplianceDetails, TimeGenerated
+
+// Query 2: Count Resource Compliance Violations by Resource Type
+complianceResults
+| where ResourceStatus == "NonCompliant"
+| summarize Count = count() by ResourceType
+
+// Query 3: List Recent Azure Policy Violations
+AzureActivity
+| where OperationName == "Microsoft.Authorization/policyExemptions/write"
+| project ResourceId, OperationName, ActivityStatus, OperationNameValue, ResourceGroupName, ResourceProviderName, ResourceId, Caller, TimeGenerated
+| order by TimeGenerated desc
+
+// Query 4: Count Recent Azure Policy Violations by Policy Name
+AzureActivity
+| where OperationName == "Microsoft.Authorization/policyExemptions/write"
+| summarize Count = count() by PolicyName
+| order by Count desc
+
+// Query 5: List Failed Sign-in Attempts
+SigninLogs
+| where ResultType == "Failure"
+| project UserPrincipalName, AppDisplayName, IPAddress, Location, DeviceDetail, TimeGenerated
+
+// Query 6: Count Failed Sign-in Attempts by User
+SigninLogs
+| where ResultType == "Failure"
+| summarize Count = count() by UserPrincipalName
+| order by Count desc
 
