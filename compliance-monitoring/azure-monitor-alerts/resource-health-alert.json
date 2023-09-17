@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/monitoringRuleDefinition.json#",
+  "contentVersion": "1.0.0.0",
+  "id": "/subscriptions/your-subscription-id/resourceGroups/your-resource-group/providers/microsoft.insights/alertrules/resource-health-alert",
+  "name": "resource-health-alert",
+  "type": "Microsoft.Insights/metricalerts",
+  "location": "Global",
+  "tags": {
+    "displayName": "Resource Health Alert"
+  },
+  "properties": {
+    "description": "Alert rule for monitoring the health of Azure resources.",
+    "severity": 3,
+    "enabled": true,
+    "scopes": [],
+    "evaluationFrequency": "PT30M",
+    "windowSize": "PT30M",
+    "criteria": {
+      "odata.type": "Microsoft.Azure.Monitor.SingleResourceSingleMetricCriteria",
+      "metricName": "HealthStatus",
+      "dimensions": [],
+      "criterionType": "StaticThresholdCriterion",
+      "operator": "GreaterThan",
+      "threshold": 0
+    },
+    "actions": {
+      "actionGroupId": "/subscriptions/your-subscription-id/resourceGroups/your-resource-group/providers/microsoft.insights/actiongroups/your-action-group"
+    }
+  }
+}
