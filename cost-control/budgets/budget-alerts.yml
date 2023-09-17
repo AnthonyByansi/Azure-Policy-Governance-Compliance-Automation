@@ -1,0 +1,12 @@
+- name: Notify on Azure Cost Budget Exceedance
+  schedule: 0 */4 * * *
+  triggers:
+    - type: AzureCostBudget
+      source: AzureCostBudget
+      states:
+        - Exceeded
+  actions:
+    - actionType: LogicApp
+      actionName: NotifyViaLogicApp
+      parameters:
+        logicAppResourceId: "/subscriptions/your-subscription-id/resourceGroups/your-resource-group/providers/Microsoft.Logic/workflows/your-logic-app-name"
