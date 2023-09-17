@@ -1,0 +1,25 @@
+{
+    "mode": "All",
+    "displayName": "Ensure Data Encryption for Azure Storage Accounts",
+    "description": "This built-in policy ensures data encryption for Azure storage accounts.",
+    "metadata": {
+      "category": "Security",
+      "createdBy": "Azure"
+    },
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "not": {
+          "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
+          "equals": "true"
+        }
+      },
+      "then": {
+        "effect": "audit",
+        "details": {
+          "message": "Data encryption for storage accounts should be enforced by enabling 'HTTPS traffic only'."
+        }
+      }
+    }
+  }
+  
