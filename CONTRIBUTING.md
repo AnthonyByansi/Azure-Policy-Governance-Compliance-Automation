@@ -21,7 +21,7 @@ Before you start contributing, please take a moment to read this document to und
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report any unacceptable behavior to [email@example.com].
+This project and everyone participating in it is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report any unacceptable behavior to [Email](https://github.com/AnthonyByansi/Azure-Policy-Governance-Compliance-Automation/issues).
 
 ## How Can I Contribute?
 
