@@ -1,0 +1,21 @@
+# Remediation Playbook for Enforcing Data Encryption in Azure Storage Accounts
+
+- name: Remediate Non-Compliant Storage Account
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Set Azure Storage Account to Use HTTPS Traffic Only
+      azure_rm_storageaccount:
+        resource_group: "YOUR_RESOURCE_GROUP_NAME"
+        name: "YOUR_STORAGE_ACCOUNT_NAME"
+        https_traffic_only: yes
+      register: remediation_status
+
+    - name: Check Remediation Status
+      fail:
+        msg: "Remediation failed: Data encryption not enforced for storage account."
+      when: remediation_status.failed
+
+    - name: Confirm Remediation Success
+      debug:
+        msg: "Remediation successful: Data encryption enforced for storage account."
