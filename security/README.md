@@ -1,7 +1,5 @@
 # Azure Security Resources
 
-![Azure Security](azure-security.jpg)
-
 This directory is dedicated to helping you establish and maintain robust security practices within your Azure environment.
 
 ## Table of Contents
