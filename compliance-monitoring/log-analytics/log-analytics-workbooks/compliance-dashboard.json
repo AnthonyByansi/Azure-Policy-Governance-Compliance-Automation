@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "title": "Compliance Monitoring Dashboard",
+  "description": "A dashboard for monitoring compliance in the Azure environment.",
+  "sections": [
+    {
+      "title": "Azure Policy Compliance",
+      "rows": [
+        {
+          "title": "Top Non-Compliant Resources",
+          "type": "query",
+          "query": "complianceResults | where ResourceStatus == 'NonCompliant' | project ResourceType, ResourceName, ComplianceState, ComplianceDetails",
+          "visualType": "table",
+          "height": 6
+        },
+        {
+          "title": "Compliance Trend Over Time",
+          "type": "query",
+          "query": "complianceResults | summarize ComplianceCount=count() by ComplianceState, bin(TimeGenerated, 1d) | project ComplianceState, TimeGenerated, ComplianceCount",
+          "visualType": "timechart",
+          "height": 6
+        }
+      ]
+    },
+    {
+      "title": "Azure Security Compliance",
+      "rows": [
+        {
+          "title": "Security Alerts",
+          "type": "query",
+          "query": "SecurityAlerts | project AlertName, Severity, TimeGenerated, ResourceName, Description | order by TimeGenerated desc",
+          "visualType": "table",
+          "height": 6
+        },
+        {
+          "title": "Top Security Threats",
+          "type": "query",
+          "query": "SecurityAlerts | summarize ThreatCount=count() by ThreatName | top 10 by ThreatCount desc",
+          "visualType": "barChart",
+          "height": 6
+        }
+      ]
+    }
+  ]
+}
