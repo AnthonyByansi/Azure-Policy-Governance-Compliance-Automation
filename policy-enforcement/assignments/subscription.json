@@ -1,0 +1,12 @@
+{
+  "displayName": "Enforce Data Encryption at Subscription",
+  "policyDefinitionId": "/subscriptions/your-subscription-id/providers/Microsoft.Authorization/policyDefinitions/data-encryption-policy",
+  "scope": "/subscriptions/your-subscription-id",
+  "notScopes": [],
+  "parameters": {},
+  "enforcementMode": "Default",
+  "metadata": {
+    "category": "Security",
+    "createdBy": "Your Name"
+  }
+}
