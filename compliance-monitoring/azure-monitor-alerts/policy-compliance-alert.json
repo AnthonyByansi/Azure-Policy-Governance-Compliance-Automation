@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/monitoringRuleDefinition.json#",
+  "contentVersion": "1.0.0.0",
+  "id": "/subscriptions/your-subscription-id/resourceGroups/your-resource-group/providers/microsoft.insights/alertrules/azure-policy-compliance-alert",
+  "name": "azure-policy-compliance-alert",
+  "type": "Microsoft.Insights/metricalerts",
+  "location": "Global",
+  "tags": {
+    "displayName": "Azure Policy Compliance Alert"
+  },
+  "properties": {
+    "description": "Alert rule for Azure Policy compliance violations.",
+    "severity": 2,
+    "enabled": true,
+    "scopes": [
+      "/subscriptions/your-subscription-id"
+    ],
+    "evaluationFrequency": "PT15M",
+    "windowSize": "PT15M",
+    "criteria": {
+      "odata.type": "Microsoft.Azure.Monitor.SingleResourceMultipleMetricCriteria",
+      "allOf": [
+        {
+          "name": "count",
+          "metricName": "Count",
+          "operator": "GreaterThan",
+          "threshold": 0,
+          "timeAggregation": "Total",
+          "dimensions": [],
+          "criterionType": "StaticThresholdCriterion"
+        }
+      ]
+    },
+    "actions": {
+      "actionGroupId": "/subscriptions/your-subscription-id/resourceGroups/your-resource-group/providers/microsoft.insights/actiongroups/your-action-group"
+    }
+  }
+}
