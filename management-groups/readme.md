@@ -2,7 +2,7 @@
 # Azure Policy Governance and Compliance Automation
 ## Management Groups Configuration
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/your_username/your_project/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](http)
 
 This directory contains configuration and documentation related to Azure Management Groups in the context of our Azure Policy Governance and Compliance Automation project. Management groups are a fundamental part of Azure governance, helping you organize resources, enforce policies, and maintain compliance in your Azure environment.
 
@@ -93,8 +93,8 @@ When working with Azure Management Groups, consider the following best practices
 
 ## Contributing
 
-We welcome contributions from the community! If you have improvements, bug fixes, or additional features to propose, please review our [Contribution Guidelines](./CONTRIBUTING.md) for details on how to contribute.
+We welcome contributions from the community! If you have improvements, bug fixes, or additional features to propose, please review our [Contribution Guidelines](CONTRIBUTING.md) for details on how to contribute.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
