@@ -1,0 +1,32 @@
+{
+  "roleAssignments": [
+    {
+      "name": "Resource Group Contributor",
+      "description": "Allows managing resources in a specific resource group.",
+      "principal": {
+        "type": "User",
+        "displayName": "John Doe",
+        "objectId": "user-object-id"
+      },
+      "roleDefinition": {
+        "id": "/subscriptions/your-subscription-id/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
+        "name": "Contributor"
+      },
+      "scope": "/subscriptions/your-subscription-id/resourceGroups/resource-group-name"
+    },
+    {
+      "name": "Storage Account Reader",
+      "description": "Allows read-only access to a specific storage account.",
+      "principal": {
+        "type": "ServicePrincipal",
+        "displayName": "App Service",
+        "objectId": "service-principal-object-id"
+      },
+      "roleDefinition": {
+        "id": "/subscriptions/your-subscription-id/providers/Microsoft.Authorization/roleDefinitions/5e9e38f6-2e56-4c63-8137-75762f4e10f4",
+        "name": "Reader"
+      },
+      "scope": "/subscriptions/your-subscription-id/resourceGroups/resource-group-name/providers/Microsoft.Storage/storageAccounts/storage-account-name"
+    }
+  ]
+}
